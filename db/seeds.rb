@@ -8,25 +8,25 @@ List.destroy_all
 Reminder.destroy_all
 Task.destroy_all
 
-user = User.create!(
+morgane = User.create!(
   username: 'Morgane',
   email: 'morgane87@taskit.fr',
   password: 'azerty',
 )
 
-user = User.create!(
+jb = User.create!(
   username: 'JB',
   email: 'jb33@taskit.fr',
   password: 'azerty',
 )
 
-user = User.create!(
+thib = User.create!(
   username: 'Thib',
   email: 'thib33@taskit.fr',
   password: 'azerty',
 )
 
-user = User.create!(
+dono = User.create!(
   username: 'Dono',
   email: 'dono@taskit.fr',
   password: 'azerty',
@@ -41,7 +41,7 @@ puts 'Creating lists'
 list = List.create!(
   name: 'Leclerc',
   category: 'Courses',
-  user_id: 1,
+  user: ,
 )
 
 list = List.create!(
