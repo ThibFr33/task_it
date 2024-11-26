@@ -1,0 +1,12 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.card {
+  margin : 5px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  text-align: center;
+  height: 200px; /* Hauteur fixe pour les cartes */
+}
