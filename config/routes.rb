@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     post 'ocr', on: :member
   end
   resources :reminders, only: [:new, :index, :update, :destroy] do
-    post 'ocr', on: :member
+    post 'ocr', on: :collection
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
