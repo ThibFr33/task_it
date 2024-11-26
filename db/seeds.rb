@@ -2,31 +2,32 @@
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
-puts 'Creating users'
-User.destroy_all
+Task.destroy_all
 List.destroy_all
 Reminder.destroy_all
-Task.destroy_all
+User.destroy_all
 
-user = User.create!(
+puts 'Creating users'
+
+Morgane = User.create!(
   username: 'Morgane',
   email: 'morgane87@taskit.fr',
   password: 'azerty',
 )
 
-user = User.create!(
+JB = User.create!(
   username: 'JB',
   email: 'jb33@taskit.fr',
   password: 'azerty',
 )
 
-user = User.create!(
+Thib = User.create!(
   username: 'Thib',
   email: 'thib33@taskit.fr',
   password: 'azerty',
 )
 
-user = User.create!(
+Dono = User.create!(
   username: 'Dono',
   email: 'dono@taskit.fr',
   password: 'azerty',
@@ -35,132 +36,127 @@ user = User.create!(
 puts 'Finished!'
 p "Created #{User.count} users"
 
-
-
 puts 'Creating lists'
-list = List.create!(
+
+Leclerc = List.create!(
   name: 'Leclerc',
   category: 'Courses',
-  user_id: 1,
+  user_id: Morgane.id,
 )
 
-list = List.create!(
+Ski = List.create!(
   name: 'Ski',
   category: 'Vacances',
-  user_id: 2,
+  user_id: JB.id,
 )
 
-list = List.create!(
+Bricolage = List.create!(
   name: 'Bricolage',
   category: 'Maison',
-  user_id: 3,
+  user_id: Thib.id,
 )
 
-list = List.create!(
+Impôts = List.create!(
   name: 'Impôts',
   category: 'Administratif',
-  user_id: 4,
+  user_id: Dono.id,
 )
 
 puts 'Finished!'
 p "Created #{List.count} lists"
-
-
 
 puts 'Creating reminders'
 
 reminder = Reminder.create!(
   end_date: "12/06/2024 17:00",
   description: 'RDV Dr Papax',
-  user_id: 1,
+  user_id: Morgane.id,
 )
 
 reminder = Reminder.create!(
   end_date: "12/06/2024 22:00",
   description: 'Récupérer colis',
-  user_id: 2,
+  user_id: JB.id,
 )
 
 reminder = Reminder.create!(
   end_date: "12/08/2024 11:00",
   description: 'Acheter fleurs',
-  user_id: 3,
+  user_id: Thib.id,
 )
 
 reminder = Reminder.create!(
   end_date: "12/10/2024 09:00",
   description: 'Récupérer Kévin',
-  user_id: 4,
+  user_id: Dono.id,
 )
 
 reminder = Reminder.create!(
   end_date: "12/06/2024 09:00",
   description: 'Déposer colis',
-  user_id: 1,
+  user_id: Morgane.id,
 )
 
 reminder = Reminder.create!(
   end_date: "12/08/2024 15:00",
   description: 'Acheter fleurs',
-  user_id: 1,
+  user_id: Morgane.id,
 )
 
 reminder = Reminder.create!(
   end_date: "12/13/2024 11:30",
   description: 'Arroser plantes',
-  user_id: 1,
+  user_id: Morgane.id,
 )
 
 puts 'Finished!'
 p "Created #{Reminder.count} reminders"
 
-
-
 puts 'Creating tasks'
 
 task = Task.create!(
   label: "Oeufs",
-  list_id: 1,
+  list_id: Leclerc.id,
 )
 
 task = Task.create!(
   label: "Tomates",
-  list_id: 1,
+  list_id: Leclerc.id,
 )
 
 task = Task.create!(
   label: "Salade",
-  list_id: 1,
+  list_id: Leclerc.id,
 )
 
 task = Task.create!(
   label: "Entrecôte",
-  list_id: 1,
+  list_id: Leclerc.id,
 )
 
 task = Task.create!(
   label: "Pizza",
-  list_id: 1,
+  list_id: Leclerc.id,
 )
 
 task = Task.create!(
   label: "Louer skis",
-  list_id: 2,
+  list_id: Ski.id,
 )
 
 task = Task.create!(
   label: "Acheter forfait",
-  list_id: 2,
+  list_id: Ski.id,
 )
 
 task = Task.create!(
   label: "Repeindre cuisine",
-  list_id: 2,
+  list_id: Bricolage.id,
 )
 
 task = Task.create!(
   label: "Tondre pelouse",
-  list_id: 2,
+  list_id: Bricolage.id,
 )
 
 puts 'Finished!'
