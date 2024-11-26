@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :dashboard, only: [:index]
+  resources :dashboards, only: [:index]
   resources :lists do
     resources :tasks, only: [:create, :update, :destroy]
     post 'ocr', on: :member
