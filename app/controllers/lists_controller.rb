@@ -2,6 +2,7 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
+    @tasks = Task.new
   end
 
   def show
