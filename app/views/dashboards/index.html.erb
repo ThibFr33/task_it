@@ -1,32 +1,89 @@
 <div class="container">
+
    <div class="row">
-    <div class="col-12 text-left mt-5">
+
+    <div class="col-12 text-left mt-3">
       <h3><b>To-do list</b></h3>
-        </div>
+    </div>
 
-      <div class="col-6 p-0">
-        <div class="card align-items-center justify-content-center" >
-
-        </div>
-      </div>
-
-
+    <%= link_to root_path do %>
     <div class="col-6 p-0">
-      <div class= "card">
-      <p>Carte 2</p>
+      <div class="list-card-dashboard" >
+        <div>Ajouter<br>une liste</div>
+        <i class="fa-solid fa-circle-plus color"></i>
+    <% end %>
       </div>
     </div>
+
     <div class="col-6 p-0">
-      <div class= "card">
-      <p>Carte 3</p>
+      <div class= "list-card-dashboard">
+      <p>Courses</p>
       </div>
     </div>
+
     <div class="col-6 p-0">
-      <div class= "card">
-      <p>Carte 4</p>
+      <div class= "list-card-dashboard">
+      <p>Vacances</p>
+      </div>
+    </div>
+
+    <div class="col-6 p-0">
+      <div class= "list-card-dashboard">
+      <p>Ménage</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-6 p-0">
+      <div class= "voir-plus-card d-flex align-items-baseline gap-2">
+      <p class="mb-0"><%=link_to "Voir plus..."%></p>
+      <i class="fa-solid fa-circle-chevron-right"></i>
       </div>
     </div>
   </div>
+
+</div>
+
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-12 text-left mt-3">
+      <h3><b>Rappels du jour</b></h3>
+    </div>
+
+    <div class="col-12 p-0">
+      <div class= "reminder-card-dashboard">
+      <p>Récupérer courses</p>
+      </div>
+    </div>
+
+    <div class="col-12 p-0">
+      <div class= "reminder-card-dashboard">
+      <p>Dentiste</p>
+      </div>
+    </div>
+
+    <div class="col-12 p-0">
+      <div class= "reminder-card-dashboard">
+      <p>Déposer colis</p>
+      </div>
+    </div>
+
+    <div class="col-12 d-flex flex-column align-items-end p-0">
+      <div class="col-6">
+        <div class="voir-plus-card d-flex align-items-baseline gap-2 voir-plus-reminders-background">
+        <p class="mb-0"><%=link_to "Voir plus..."%></p>
+        <i class="fa-solid fa-circle-chevron-right"></i>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </div>
 
 
