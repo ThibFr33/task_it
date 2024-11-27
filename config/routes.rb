@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :dashboards, only: [:index]
   resources :lists do
-    resources :tasks, only: [:create, :update, :destroy]
+    resources :tasks, only: [:create]
     post 'ocr', on: :member
   end
+  resources :tasks, only: [:update, :destroy]
   resources :reminders, only: [:new, :index, :update, :destroy] do
     post 'ocr', on: :collection
   end
