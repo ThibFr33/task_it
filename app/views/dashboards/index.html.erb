@@ -4,11 +4,9 @@
       <h3><b>To-do list</b></h3>
         </div>
 
-    <%= link_to root_path do %>
       <div class="col-6 p-0">
         <div class="card align-items-center justify-content-center" >
-          <div>Hey!</div>
-    <% end %>
+
         </div>
       </div>
 
@@ -30,3 +28,7 @@
     </div>
   </div>
 </div>
+
+
+<div><button type="button" data-bs-toggle="modal" data-bs-target="#listModal">Launch modal</button></div>
+<%= render 'dashboards/modal' %>
