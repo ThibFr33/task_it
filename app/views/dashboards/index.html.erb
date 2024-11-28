@@ -18,15 +18,15 @@
   <div class="row">
 
     <%= link_to root_path do %>
-    <div class="col-6 p-0" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#listModal">
-      <div class="list-card-dashboard" >
-        <div>Ajouter<br>une liste</div>
-        <i class="fa-solid fa-circle-plus color mt-3"></i>
+      <div class="col-6 p-0" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#listModal">
+        <div class="list-card-dashboard" >
+          <div>Ajouter<br>une liste</div>
+          <i class="fa-solid fa-circle-plus color mt-3"></i>
+        </div>
       </div>
-    </div>
-    <% @last_lists.each do |list| %>
-      <%=render "list_card", list: list  %>
-    <% end %>
+      <% @last_lists.each do |list| %>
+        <%=render "list_card", list: list  %>
+      <% end %>
   </div>
 
 </div>
