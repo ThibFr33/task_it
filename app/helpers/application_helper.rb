@@ -3,5 +3,3 @@ module ApplicationHelper
     return "#{category}.png"
   end
 end
-
-# <%= image_path(image_category(List.category)) %>

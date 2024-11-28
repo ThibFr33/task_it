@@ -1,5 +1,6 @@
 <%=link_to list_path(list), class: "col-6 p-0 text-decoration-none" do %>
       <div class= "list-card-dashboard">
         <p><%= list.name  %></p>
+        <%= image_path(image_category(List.category)) %>
       </div>
 <% end %>
