@@ -8,7 +8,7 @@
 
     <div class="col-6 text-right">
       <div class= "voir-plus-lists d-flex align-items-baseline gap-2">
-      <p class="mb-0"><%=link_to "Voir plus..."%></p>
+      <p class="mb-0"><%=link_to "Voir plus...", lists_path%></p>
       <i class="fa-solid fa-circle-chevron-right"></i>
       </div>
     </div>
@@ -16,6 +16,7 @@
   </div>
 
   <div class="row">
+<<<<<<< HEAD
 
     <%= link_to root_path do %>
       <div class="col-6 p-0" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#listModal">
@@ -23,6 +24,13 @@
           <div>Ajouter<br>une liste</div>
           <i class="fa-solid fa-circle-plus color mt-3"></i>
         </div>
+=======
+    <%# <%= link_to root_path do %>
+    <div class="col-6 p-0" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#listModal">
+      <div class="list-card-dashboard" >
+        <div>Ajouter<br>une liste</div>
+        <i class="fa-solid fa-circle-plus color mt-3"></i>
+>>>>>>> a98349c75128abe2585b937c35e3c6e2c32ee10a
       </div>
       <% @last_lists.each do |list| %>
         <%=render "list_card", list: list  %>
@@ -42,7 +50,7 @@
 
     <div class="col-4 text-right">
       <div class="voir-plus-reminders d-flex align-items-right gap-2 voir-plus-reminders-background">
-      <p class="mb-0"><%=link_to "Voir plus..."%></p>
+      <p class="mb-0"><%=link_to "Voir plus...", reminders_path %></p>
       <i class="fa-solid fa-circle-chevron-right"></i>
       </div>
     </div>
