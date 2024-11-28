@@ -6,12 +6,10 @@
       <h3><b>Listes</b></h3>
     </div>
 
-    <%= link_to root_path do %>
-    <div class="col-6 p-0">
+    <div class="col-6 p-0" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#listModal">
       <div class="list-card-dashboard" >
         <div>Ajouter<br>une liste</div>
         <i class="fa-solid fa-circle-plus color"></i>
-    <% end %>
       </div>
     </div>
 
@@ -38,7 +36,7 @@
   <div class="row">
     <div class="col-6 p-0">
       <div class= "voir-plus-card d-flex align-items-baseline gap-2">
-      <p class="mb-0"><%=link_to "Voir plus..."%></p>
+      <p class="mb-0"><%=link_to "Voir plus...", lists_path%></p>
       <i class="fa-solid fa-circle-chevron-right"></i>
       </div>
     </div>
@@ -85,6 +83,4 @@
   </div>
 
 </div>
-
-<div><button type="button" data-bs-toggle="modal" data-bs-target="#listModal">Launch modal</button></div>
 <%= render 'dashboards/modal' %>
