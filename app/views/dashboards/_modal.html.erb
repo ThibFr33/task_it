@@ -8,7 +8,7 @@
       <div class="modal-body">
         <%= simple_form_for @list do |f| %>
           <%= f.input :name, label: 'Nom de la liste' %>
-          <%= f.select :category, options_for_select(List.categories.map {|key, value| [key.capitalize, key]}) %>
+          <%= f.select :category, options_for_select(List.categories.map {|key, value| [key.capitalize, key]}), class: 'select-form' %>
       </div>
       <div class="modal-footer">
            <%= f.button :submit, 'Valider', class: 'validate-button' %>
@@ -17,4 +17,3 @@
     </div>
   </div>
 </div>
-
