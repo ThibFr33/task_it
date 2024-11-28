@@ -14,7 +14,6 @@ class ListsController < ApplicationController
   end
 
   def create
-    # raise
     @list = List.new(list_params)
     @list.user = current_user
     @list.save
