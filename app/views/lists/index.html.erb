@@ -3,6 +3,6 @@
   </div>
     <ul><% @lists.each do |list| %></ul>
   <div class="lists-card-index">
-    <li><%= list.name %></li>
+    <%= link_to list.name,list_path(list), class:"lists-card-link"%>
   </div>
     <% end %>
