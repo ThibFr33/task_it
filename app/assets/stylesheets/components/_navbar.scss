@@ -1,13 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: black;
+  background: $black;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
-
-
 
 .subtitle {
   font-size: x-small;
