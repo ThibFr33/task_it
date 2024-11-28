@@ -12,25 +12,9 @@
         <i class="fa-solid fa-circle-plus color"></i>
       </div>
     </div>
-
-    <div class="col-6 p-0">
-      <div class= "list-card-dashboard">
-      <p>Courses</p>
-      </div>
-    </div>
-
-    <div class="col-6 p-0">
-      <div class= "list-card-dashboard">
-      <p>Vacances</p>
-      </div>
-    </div>
-
-    <div class="col-6 p-0">
-      <div class= "list-card-dashboard">
-      <p>Ménage</p>
-      </div>
-    </div>
-
+    <% @last_lists.each do |list| %>
+      <%=render "list_card", list: list  %>
+    <% end %>
   </div>
 
   <div class="row">
