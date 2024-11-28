@@ -1,7 +1,8 @@
-<div class="container" font-color = "blue">
-  <h2>Mes listes</h2>
-  <ul><% @lists.each do |list| %></ul>
-  <li><%= list.name %></li>
-  <% end %>
-</div>
-
+  <div class = "my-lists-title">
+    <h2>Mes listes</h2>
+  </div>
+    <ul><% @lists.each do |list| %></ul>
+  <div class="lists-card-index">
+    <li><%= list.name %></li>
+  </div>
+    <% end %>
