@@ -21,6 +21,7 @@ class ListsController < ApplicationController
      else
        render "dashboards/index", status: :unprocessable_entity
      end
+  end
 
   def destroy
     @list = List.find(params[:id])
