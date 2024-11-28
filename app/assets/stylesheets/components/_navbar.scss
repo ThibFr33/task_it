@@ -10,3 +10,11 @@
 .subtitle {
   font-size: x-small;
 }
+
+.navbar-toggler-icon {
+  background-image: asset-url('user.png') !important;
+}
+
+b {
+  color: $white;
+}

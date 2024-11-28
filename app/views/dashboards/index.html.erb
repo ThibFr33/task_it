@@ -1,11 +1,23 @@
 <div class="container">
 
-   <div class="row">
+  <div class="d-flex align-items-baseline mt-3">
 
-    <div class="col-12 text-left mt-3">
+    <div class="col-6 text-left">
       <h3><b>Listes</b></h3>
     </div>
 
+    <div class="col-6 text-right">
+      <div class= "voir-plus-lists d-flex align-items-baseline gap-2">
+      <p class="mb-0"><%=link_to "Voir plus..."%></p>
+      <i class="fa-solid fa-circle-chevron-right"></i>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <%= link_to root_path do %>
     <div class="col-6 p-0" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#listModal">
       <div class="list-card-dashboard" >
         <div>Ajouter<br>une liste</div>
@@ -17,25 +29,27 @@
     <% end %>
   </div>
 
-  <div class="row">
-    <div class="col-6 p-0">
-      <div class= "voir-plus-card d-flex align-items-baseline gap-2">
-      <p class="mb-0"><%=link_to "Voir plus...", lists_path%></p>
-      <i class="fa-solid fa-circle-chevron-right"></i>
-      </div>
-    </div>
-  </div>
-
 </div>
 
 
 <div class="container">
 
-  <div class="row">
+  <div class="d-flex align-items-baseline mt-3">
 
-    <div class="col-12 text-left mt-3">
+    <div class="col-7 text-left">
       <h3><b>Rappels du jour</b></h3>
     </div>
+
+    <div class="col-4 text-right">
+      <div class="voir-plus-reminders d-flex align-items-right gap-2 voir-plus-reminders-background">
+      <p class="mb-0"><%=link_to "Voir plus..."%></p>
+      <i class="fa-solid fa-circle-chevron-right"></i>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
 
     <div class="col-12 p-0">
       <div class= "reminder-card-dashboard">
@@ -52,15 +66,6 @@
     <div class="col-12 p-0">
       <div class= "reminder-card-dashboard">
       <p>Déposer colis</p>
-      </div>
-    </div>
-
-    <div class="col-12 d-flex flex-column align-items-end p-0">
-      <div class="col-6">
-        <div class="voir-plus-card d-flex align-items-baseline gap-2 voir-plus-reminders-background">
-        <p class="mb-0"><%=link_to "Voir plus..."%></p>
-        <i class="fa-solid fa-circle-chevron-right"></i>
-        </div>
       </div>
     </div>
 
