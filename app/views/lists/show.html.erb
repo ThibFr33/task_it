@@ -1,10 +1,14 @@
 <div class="container">
-  <div class="list-card-product", width = 200px height = 800px>
-    <h2><ul><%= @list.name %></ul></h2>
-        <% @list.tasks.each do |task| %>
-            <%= simple_form_for task, data: { controller: "submit-task" } do |f| %>
-                <%= f.input :done, label: task.label, input_html: {data: {action: "change->submit-task#submit"}} %>
-            <% end %>
-        <% end %>
+  <div class="list-card-product">
+    <div class="row">
+
+      <h2><ul><%= @list.name %></ul></h2>
+          <% @list.tasks.each do |task| %>
+              <%= simple_form_for task, data: { controller: "submit-task" } do |f| %>
+                  <%= f.input :done, label: task.label, input_html: {data: {action: "change->submit-task#submit"}} %>
+              <% end %>
+          <% end %>
+      
+    </div>
   </div>
 </div>
