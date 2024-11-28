@@ -16,8 +16,17 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     @list.user = current_user
-    @list.save
-    redirect_to list_path(@list)
+     if @list.save
+       redirect_to list_path(@list)
+     else
+       render "dashboards/index", status: :unprocessable_entity
+     end
+  end
+
+  def destroy
+    @list = List.find(params[:id])
+    @list.destroy
+    redirect_to list_paths, status: :see_other
   end
 
   private

@@ -41,21 +41,54 @@
 }
 
 .modal-content {
-  background-color: $purple;
+  background-color: $yellow;
   border-radius: 25px;
+  border-color: $black;
 }
 
 .form-control {
   color: $black;
   background-color: $white;
+  width: 335px;
+  height: 40px;
+  border-color: $black;
+}
+
+#list_category {
+  width: 335px;
+  height: 40px;
+  border-color: $black;
 }
 
 .validate-button {
   color: $white;
+  font-weight: 600;
   background-color: $black;
   border-radius: 25px;
+  width: 335px;
+  max-width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.3s ease;
 }
-
+.validate-button:hover {
+  background-color: $black;
+  color: $white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
 .modal-header, .modal-footer {
   border: none;
+}
+
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.modal-footer {
+  justify-content: center;
 }

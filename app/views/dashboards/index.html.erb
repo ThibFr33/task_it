@@ -18,32 +18,15 @@
   <div class="row">
 
     <%= link_to root_path do %>
-    <div class="col-6 p-0">
+    <div class="col-6 p-0" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#listModal">
       <div class="list-card-dashboard" >
         <div>Ajouter<br>une liste</div>
-        <i class="fa-solid fa-circle-plus color"></i>
+        <i class="fa-solid fa-circle-plus color mt-3"></i>
+      </div>
+    </div>
+    <% @last_lists.each do |list| %>
+      <%=render "list_card", list: list  %>
     <% end %>
-      </div>
-    </div>
-
-    <div class="col-6 p-0">
-      <div class= "list-card-dashboard">
-      <p>Courses</p>
-      </div>
-    </div>
-
-    <div class="col-6 p-0">
-      <div class= "list-card-dashboard">
-      <p>Vacances</p>
-      </div>
-    </div>
-
-    <div class="col-6 p-0">
-      <div class= "list-card-dashboard">
-      <p>Ménage</p>
-      </div>
-    </div>
-
   </div>
 
 </div>
@@ -89,3 +72,4 @@
   </div>
 
 </div>
+<%= render 'dashboards/modal' %>
