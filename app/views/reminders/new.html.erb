@@ -1,0 +1,14 @@
+<br>
+<div class="container reminder-create">
+  <%#<div class="reminder-background">  %>
+    <h1 class="text-center montserrat-semi-bold">Nouveau rappel</h1>
+      <br>
+    <%= simple_form_for(@reminder) do |f| %>
+      <%= f.input :description, :label => "Libellé", wrapper_html: { class: 'd-flex flex-column align-items-center h2'}%>
+      <%= f.input :end_date, as: :datetime, :label => "Date et Heure", wrapper_html: { class: 'd-flex flex-column align-items-center h2' } %>
+      <div class="d-flex justify-content-center">
+        <%= f.submit "Créer rappel", class: "btn validate-button w-50"%>
+      </div>
+    <% end %>
+ <%# </div>   %>
+</div>
