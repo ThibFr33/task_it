@@ -1,3 +1,5 @@
+require "openai"
+
 class ListsController < ApplicationController
 
   def index
@@ -27,6 +29,38 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     @list.destroy
     redirect_to list_paths, status: :see_other
+  end
+
+  def ocr(base64_image)
+    client = OpenAI::Client.new
+    client.chat.completions.create(
+          model="gpt-4-vision-preview",
+          messages=[
+            {
+              "role": "user",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Je t'écris en français tu me réponds en français.
+                 Je t'envoies la photo d'une to do list. La photo est celle d'un document papier avec une écriture à la main.
+                Tu extraits chaque item séparemment. Si tu n'es pas sûr d'un item trouve la correspondance française la plus proche.",
+                },
+                {
+                  "type": "image_url",
+                  "image_url": {
+                    "url":  f"data:image/jpeg;base64,{base64_image}"
+                  },
+                },
+              ],
+            }
+          ],
+        )
+        return response.choices[0]
+  end
+  
+  def encode_image
+    file_content = File.read(params[:temp_photo].tempfile)
+    Base64.strict_encode64(file_content)
   end
 
   private
