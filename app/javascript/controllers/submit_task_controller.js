@@ -5,7 +5,7 @@ export default class extends Controller {
   connect() {
     console.log("hello from submit_task")
   }
-  submit() {
+  submitOnChange() {
     this.element.submit()
 
   }
