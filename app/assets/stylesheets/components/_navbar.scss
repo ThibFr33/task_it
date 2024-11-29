@@ -5,6 +5,7 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  text-decoration: none;
 }
 
 .subtitle {
@@ -13,6 +14,11 @@
 
 .navbar-toggler-icon {
   background-image: asset-url('user.png') !important;
+  margin-right: -15px;
+}
+
+.navbar-text-decoration {
+  list-style: none;
 }
 
 b {
