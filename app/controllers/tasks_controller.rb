@@ -1,9 +1,14 @@
 class TasksController < ApplicationController
 
   def create
+    @list = List.find(params[:list_id])
     @task = Task.new(task_params)
-    @task.save
-    redirect_to root_path
+    @task.list = @list
+    if @task.save
+      redirect_to list_path(@list)
+    else
+      render :show, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -22,6 +27,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:done)
+    params.require(:task).permit(:label, :done)
   end
 end

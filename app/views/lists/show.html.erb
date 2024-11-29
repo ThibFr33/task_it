@@ -2,12 +2,16 @@
   <div class="list-card-product">
     <div class="row">
 
-      <h2><ul><%= @list.name %></ul></h2>
-          <% @list.tasks.each do |task| %>
-              <%= simple_form_for task, data: { controller: "submit-task" } do |f| %>
-                  <%= f.input :done, as: :boolean, label: task.label, input_html: {data: {action: "change->submit-task#submit"}} %>
-              <% end %>
+      <h2 class="text-center"><ul><%= @list.name %></ul></h2>
+          <% @list.order_by_done_tasks.each do |task| %>
+            <%= simple_form_for task, data: { controller: "submit-task" } do |f| %>
+              <%= f.input :done, as: :boolean, label: task.label, input_html: {data: {action: "change->submit-task#submitOnChange"}} %>
+            <% end %>
           <% end %>
+            <%= simple_form_for [@list, @task_new] do |f| %>
+              <%= f.input :label, placeholder: 'Nouvelle tâche'%>
+            <% end %>
+
 
     </div>
   </div>
