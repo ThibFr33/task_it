@@ -19,6 +19,10 @@ class TasksController < ApplicationController
     redirect_to tasks_path
   end
 
+  def ocr
+
+  end
+
   private
 
   def task_params
