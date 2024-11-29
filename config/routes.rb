@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "dashboards#index"
   resources :dashboards, only: [:index]
   resources :lists do
-    resources :tasks, only: [:create]
+    resources :tasks, only: [:create, :new]
     post 'ocr', on: :member
   end
   resources :tasks, only: [:update, :destroy]

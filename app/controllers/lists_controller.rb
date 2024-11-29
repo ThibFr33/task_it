@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
 
   def index
-    @lists = List.all
+    @lists = List.order
   end
 
   def new
@@ -11,6 +11,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @task_new = Task.new
   end
 
   def create
