@@ -1,7 +1,7 @@
 class ListsController < ApplicationController
 
   def index
-    @lists = List.order
+    @lists = List.all
   end
 
   def new
