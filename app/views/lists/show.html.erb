@@ -9,8 +9,10 @@
             <% end %>
           <% end %>
             <%= simple_form_for [@list, @task_new] do |f| %>
-              <%= f.input :label, placeholder: 'Nouvelle tâche'%>
+              <%= f.input_field :label, placeholder: '...'%>
             <% end %>
+
+           <%# input pour OCR %>
           <%= simple_form_for :ocr, url: ocr_list_path(id: @list.id), method: :post do |f| %>
               <%= f.input :temp_photo, as: :file %>
               <%= f.submit %>
