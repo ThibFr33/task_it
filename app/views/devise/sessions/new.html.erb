@@ -1,3 +1,5 @@
+
+ <div class="container m-5"> <h1>Heureux de vous revoir</h1> </div>
 <div class="container sign-in-container">
 
   <h2>Connexion</h2>
@@ -11,7 +13,6 @@
       <%= f.input :password,
                   required: false,
                   input_html: { autocomplete: "current-password" } %>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 
     <div class="form-actions">
