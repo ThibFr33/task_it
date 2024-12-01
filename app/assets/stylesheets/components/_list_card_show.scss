@@ -1,8 +1,30 @@
 .list-card-product {
   background-color: $yellow;
+  color: $black;
   display: flex;
   margin: 10px;
   color: $black;
-  font-weight: bold;
+  font-weight: 500;
   padding: 10px;
+  border-radius: 25px;
+  background-size: 200px;
+  background-position: 150px 40px;
+  background-repeat: no-repeat;
+}
+
+.form-check-input.is-valid ~ .form-check-label {
+  color : $black;
+}
+.form-check-input:checked {
+    background-color: $black;
+    border-color: $black;
+}
+
+.form-check-input {
+  --bs-form-check-bg: $white;
+  border-color: $black;
+}
+
+.was-validated .form-check-input:valid:checked, .form-check-input.is-valid:checked {
+  background-color: $black;
 }
