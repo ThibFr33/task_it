@@ -24,12 +24,12 @@
   margin: 5px;
   padding: 10px;
   padding-left: 100px;
-  color: $black;
-  font-weight: 600;
+  color: $white;
+  font-weight: 550;
   font-size: 20px;
   background-color: $purple;
   border-radius: 25px;
-  height: 50px;
+  height: 70px;
   width: 380px;
 }
 
@@ -78,12 +78,12 @@
   font-size: 20px;
   background-color: $yellow;
   border-radius: 25px;
-  height: 50px;
+  height: 70px;
   width: 380px;
   list-style: none;
 }
 
 .lists-card-link {
   text-decoration: none;
-  color: #023047;
+  color: $black;
 }
