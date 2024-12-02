@@ -35,8 +35,8 @@ class ListsController < ApplicationController
   def ocr
     @list = List.find(params[:id])
     tasks_list = OcrList.new(params[:ocr][:temp_photo]).call
-
-    # Pour chaque task dans le tableau, créer une instance de task associée à la liste @list
+    # OcrListJob.perform_later(params[:ocr][:temp_photo],@list)
+    
     tasks_list["tasks"].each do |task|
       Task.create!(label: task, list: @list)
     end
