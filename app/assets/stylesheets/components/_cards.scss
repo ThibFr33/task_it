@@ -1,8 +1,3 @@
-// .cards {
-//   display: grid;
-//   grid-template-columns: 1fr 1fr 1fr 1fr;
-// }
-
 .list-card-dashboard {
   margin: 5px;
   padding: 10px;
@@ -22,8 +17,8 @@
 
 .reminder-card-dashboard {
   margin: 5px;
-  padding: 10px;
-  padding-left: 100px;
+  // padding: 10px;
+  padding-left: 80px;
   color: $white;
   font-weight: 550;
   font-size: 20px;
@@ -84,6 +79,28 @@
 }
 
 .lists-card-link {
+  text-decoration: none;
+  color: $black;
+}
+
+.reminders-card-index {
+  a{
+    color: $white;
+   }
+  margin: 5px;
+  padding: 20px;
+  padding-left: 30px;
+  // color: $black;
+  font-weight: 600;
+  font-size: 20px;
+  background-color: $purple;
+  border-radius: 25px;
+  height: 70px;
+  width: 380px;
+  list-style: none;
+}
+
+.reminders-card-link {
   text-decoration: none;
   color: $black;
 }

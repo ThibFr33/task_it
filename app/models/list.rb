@@ -16,4 +16,5 @@ class List < ApplicationRecord
   # def set_content
   #   OcrListJob.perform_later(self)
   # end
+
 end
