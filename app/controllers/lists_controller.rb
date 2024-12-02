@@ -1,3 +1,4 @@
+require "open-uri"
 
 class ListsController < ApplicationController
 
@@ -31,9 +32,9 @@ class ListsController < ApplicationController
     redirect_to list_paths, status: :see_other
   end
 
-  # def ocr
-  #   OcrLists.vision(params[:message])
-  # end
+  def ocr
+    OcrList.new(params[:ocr][:temp_photo]).call
+  end
 
 
   private
