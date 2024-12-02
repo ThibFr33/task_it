@@ -17,5 +17,6 @@ class RemindersController < ApplicationController
 
   def reminder_params
     params.require(:reminder).permit(:description, :end_date)
+    params.require(:reminder).permit(:description, :hours)
   end
 end
