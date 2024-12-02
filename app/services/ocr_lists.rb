@@ -3,8 +3,8 @@ require "json"
 
 class OcrLists
 
-def vision_gpt
-s@photo = encode_image
+def vision
+@photo = encode_image
 client = OpenAI::Client.new
 messages = [
   { "type": "text", "text": "Je t'écris en français tu me réponds en français.

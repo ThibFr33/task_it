@@ -32,7 +32,7 @@ class ListsController < ApplicationController
   end
 
   def ocr
-    OcrLists.call(params[:message])
+    OcrLists.vision(params[:message])
   end
 
 
