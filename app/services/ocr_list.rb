@@ -16,15 +16,28 @@ class OcrList
 
   def set_vision
 
-  messages = [
-    { "type": "text", "text": "Je t'écris en français tu me réponds en français.
+  prompt = "Je t'écris en français, tu me réponds en français.
+Je t'envoie la photo d'une to-do list.
+La photo est celle d'un document papier avec une écriture à la main.
+Tu dois extraire chaque élément de la liste séparément.
+Si tu n'es pas sûr d'un élément, trouve la correspondance française la plus proche.
 
-                              Je t'envoies la photo d'une to do list.
-                              La photo est celle d'un document papier avec une écriture à la main.
-                              Tu extraits chaque item séparemment. Si tu n'es pas sûr d'un item trouve la
-                              correspondance française la plus proche."},
-                              # lui demander de me faire le retour de la liste avec JSON
-                              # de façon à parser sa réponse par la suite
+Ta réponse doit être strictement un JSON valide, sans texte additionnel ni balises de code.
+Le format attendu est :
+
+{
+  'tasks': ['valeur1', 'valeur2', 'valeur3']
+}
+
+Assure-toi que :
+- La clé est entourée de guillemets doubles : `'tasks'`.
+- Les éléments de la liste sont dans un tableau JSON, entourés de guillemets doubles.
+- Aucun caractère d'échappement inutile comme `\n` ou `\`.
+- Si la liste est vide, retourne un JSON valide : `{'tasks': []}`.
+"
+
+  messages = [
+    { "type": "text", "text": prompt },
     { "type": "image_url",
       "image_url": {
         "url": "data:image/jpeg;base64,#{@encoded_photo}",
@@ -35,25 +48,10 @@ class OcrList
   response = @client.chat(
     parameters: {
       model: "gpt-4o-mini",
-      response_format: { type: "json_object" },
       messages: [{ role: "user", content: messages }],
     }
   )
-
-  # puts response.dig("choices", 0, "message", "content")
-  # =>
-  # {
-  #   "name": "John",
-  #   "age": 30,
-  #   "city": "New York",
-  #   "hobbies": ["reading", "traveling", "hiking"],
-  #   "isStudent": false
-  # }
-
-#file = URI.parse(url).open
-    response
     return JSON.parse(response["choices"][0]["message"]["content"])
-    debugger
   end
 
   def encode_image(photo)
