@@ -1,3 +1,4 @@
+
 class ListsController < ApplicationController
 
   def index
@@ -29,6 +30,11 @@ class ListsController < ApplicationController
     @list.destroy
     redirect_to list_paths, status: :see_other
   end
+
+  def ocr
+    OcrLists.vision(params[:message])
+  end
+
 
   private
 
