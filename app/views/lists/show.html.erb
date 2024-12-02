@@ -14,11 +14,21 @@
             <% end %>
 
            <%# input pour OCR %>
-          <%= simple_form_for :ocr, url: ocr_list_path(id: @list.id), method: :post do |f| %>
-              <%= f.input :temp_photo, as: :file %>
-              <%= f.submit %>
-            <% end %>
+          <%= simple_form_for :ocr, url: ocr_list_path(id: @list.id), method: :post, html: { multipart: true } do |f| %>
+            <div style="display: none;">
+              <%= f.input :temp_photo, as: :file, input_html: { id: "fileInput" } %>
+            </div>
+
+           <label for="fileInput" style="cursor: pointer;">
+             <i class="fa-solid fa-camera-retro" style="width: 50px; height: 50px;"></i>
+           </label>
+
+              <%= f.submit "Envoyer", class: "validate-button", style: "margin-top: 10px;" %>
+          <% end %>
 
     </div>
   </div>
+</div>
+<div class="">
+<%= render 'lists/loader' %>
 </div>
