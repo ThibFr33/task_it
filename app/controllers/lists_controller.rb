@@ -31,9 +31,9 @@ class ListsController < ApplicationController
     redirect_to list_paths, status: :see_other
   end
 
-  def ocr
-    OcrLists.vision(params[:message])
-  end
+  # def ocr
+  #   OcrLists.vision(params[:message])
+  # end
 
 
   private
