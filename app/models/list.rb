@@ -10,4 +10,5 @@ class List < ApplicationRecord
   def order_by_done_tasks
     tasks.order(done: :asc)
   end
+
 end

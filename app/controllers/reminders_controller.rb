@@ -1,6 +1,15 @@
 class RemindersController < ApplicationController
+
+  def index
+    @reminders = current_user.reminders
+  end
+
   def new
     @reminder = Reminder.new
+  end
+
+  def show
+    @reminder = Reminder.find(params[:id])
   end
 
   def create
@@ -11,6 +20,12 @@ class RemindersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @reminder = Reminder.find(params[:id])
+    @reminder.destroy
+    redirect_to reminder_paths
   end
 
   private

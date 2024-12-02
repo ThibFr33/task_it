@@ -68,14 +68,68 @@ p "Created #{List.count} lists"
 puts 'Creating reminders'
 
 reminder = Reminder.create!(
-  end_date: "12/06/2024 17:00",
+  end_date: "06/12/2024 17:00",
   description: 'RDV Dr Papax',
   user_id: morgane.id,
 )
 
 reminder = Reminder.create!(
+  end_date: "06/12/2024 09:00",
+  description: 'Déposer colis',
+  user_id: morgane.id,
+)
+
+reminder = Reminder.create!(
+  end_date: "06/12/2024 15:00",
+  description: 'Acheter fleurs',
+  user_id: morgane.id,
+)
+
+reminder = Reminder.create!(
+  end_date: "06/12/2024 11:30",
+  description: 'Arroser jardin',
+  user_id: morgane.id,
+)
+
+reminder = Reminder.create!(
+end_date: "06/12/2024 09:00",
+description: 'Ranger maison',
+user_id: morgane.id,
+)
+
+reminder = Reminder.create!(
+end_date: "02/12/2024 15:00",
+description: 'Acheter fleurs',
+user_id: morgane.id,
+)
+
+reminder = Reminder.create!(
+end_date: "02/12/2024 11:30",
+description: 'Arroser plantes',
+user_id: morgane.id,
+)
+
+reminder = Reminder.create!(
   end_date: "12/06/2024 22:00",
   description: 'Récupérer colis',
+  user_id: jb.id,
+)
+
+reminder = Reminder.create!(
+  end_date: "02/12/2024 09:00",
+  description: 'Déposer colis',
+  user_id: jb.id,
+)
+
+reminder = Reminder.create!(
+  end_date: "02/12/2024 17:00",
+  description: 'Acheter fleurs',
+  user_id: jb.id,
+)
+
+reminder = Reminder.create!(
+  end_date: "02/12/2024 19:30",
+  description: 'Arroser plantes',
   user_id: jb.id,
 )
 
@@ -86,27 +140,45 @@ reminder = Reminder.create!(
 )
 
 reminder = Reminder.create!(
-  end_date: "12/10/2024 09:00",
-  description: 'Récupérer Kévin',
-  user_id: dono.id,
-)
-
-reminder = Reminder.create!(
-  end_date: "12/06/2024 09:00",
+  end_date: "12/02/2024 09:00",
   description: 'Déposer colis',
-  user_id: morgane.id,
+  user_id: thib.id,
 )
 
 reminder = Reminder.create!(
-  end_date: "12/08/2024 15:00",
+  end_date: "12/02/2024 15:00",
   description: 'Acheter fleurs',
-  user_id: morgane.id,
+  user_id: thib.id,
 )
 
 reminder = Reminder.create!(
-  end_date: "12/13/2024 11:30",
-  description: 'Arroser plantes',
-  user_id: morgane.id,
+end_date: "12/02/2024 11:30",
+description: 'Arroser plantes',
+user_id: thib.id,
+)
+
+reminder = Reminder.create!(
+end_date: "12/10/2024 09:00",
+description: 'Récupérer Kévin',
+user_id: dono.id,
+)
+
+reminder = Reminder.create!(
+end_date: "12/02/2024 09:00",
+description: 'Déposer colis',
+user_id: dono.id,
+)
+
+reminder = Reminder.create!(
+end_date: "12/02/2024 15:00",
+description: 'Acheter fleurs',
+user_id: dono.id,
+)
+
+reminder = Reminder.create!(
+end_date: "12/02/2024 11:30",
+description: 'Arroser plantes',
+user_id: dono.id,
 )
 
 puts 'Finished!'
@@ -115,8 +187,8 @@ p "Created #{Reminder.count} reminders"
 puts 'Creating tasks'
 
 task = Task.create!(
-  label: "Oeufs",
-  list_id: leclerc.id,
+label: "Oeufs",
+list_id: leclerc.id,
 )
 
 task = Task.create!(
