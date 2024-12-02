@@ -1,6 +1,14 @@
-  <div class= "my-title">
+<div class="d-flex align-items-baseline">
+  <div class= "col-10 text-left my-title">
     <h2>Mes rappels</h2>
   </div>
+  <div class="col-2 text-right">
+    <%= link_to "", new_reminder_path %>
+    <i class="fa-solid fa-circle-plus color fa-2x"></i>
+  </div>
+</div>
+
+</div>
     <ul><% @reminders.each do |reminder| %></ul>
   <div class="reminders-card-index">
     <%= link_to reminder.description,reminder_path(reminder), class:"reminders-card-link"%>
