@@ -1,3 +1,4 @@
+require "open-uri"
 
 class ListsController < ApplicationController
 
@@ -32,7 +33,14 @@ class ListsController < ApplicationController
   end
 
   def ocr
-    OcrLists.vision(params[:message])
+    @list = List.find(params[:id])
+    tasks_list = OcrList.new(params[:ocr][:temp_photo]).call
+
+    # Pour chaque task dans le tableau, créer une instance de task associée à la liste @list
+    tasks_list["tasks"].each do |task|
+      Task.create!(label: task, list: @list)
+    end
+    redirect_to list_path(@list)
   end
 
 
