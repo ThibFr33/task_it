@@ -1,6 +1,20 @@
 .reminder-create {
-  color: $black;
   background-color: $purple;
   border-radius: 25px;
+  .form-control {
+    color: $black;
+    &:focus {
+      background-color: $white;
+    }
+  }
+  ::placeholder {
+    color: black;
+  }
+}
 
+.title-reminder {
+  font-family: $body-font;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
 }

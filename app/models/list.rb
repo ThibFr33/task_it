@@ -3,12 +3,18 @@ class List < ApplicationRecord
 
 
   belongs_to :user
-  has_many :tasks
+  has_many :tasks, dependent: :destroy
 
   validates :name, :category, presence: true
 
   def order_by_done_tasks
     tasks.order(done: :asc)
   end
+
+  # private
+
+  # def set_content
+  #   OcrListJob.perform_later(self)
+  # end
 
 end
