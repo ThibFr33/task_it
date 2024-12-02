@@ -2,7 +2,6 @@ require "openai"
 require "json"
 
 class OcrList
-
   def initialize(photo)
     @encoded_photo = encode_image(photo)
     @client = OpenAI::Client.new
@@ -15,7 +14,6 @@ class OcrList
   private
 
   def set_vision
-
   prompt = "Je t'écris en français, tu me réponds en français.
 Je t'envoie la photo d'une to-do list.
 La photo est celle d'un document papier avec une écriture à la main.

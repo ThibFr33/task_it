@@ -10,4 +10,10 @@ class List < ApplicationRecord
   def order_by_done_tasks
     tasks.order(done: :asc)
   end
+
+  # private
+
+  # def set_content
+  #   OcrListJob.perform_later(self)
+  # end
 end
