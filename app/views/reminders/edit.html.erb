@@ -2,8 +2,8 @@
     <h1 class="title-reminder"><%= @reminder.description %></h1>
     <%= simple_form_for(@reminder) do |f| %>
       <%= f.input :description, :label => false, input_html: {style: "color: black"}%>
-      <%= f.input :end_date, as: :string, :label => "Date *", input_html: {data: {controller: "flatpickr" } }%>
-      <%= f.input :hours, as: :string, :label => "Heure *" do %>
+      <%= f.input :end_date, as: :string, :label => "Date *" ,input_html:{data: { controller: "flatpickr", flatpickr_end_date_value: @reminder.end_date.iso8601(3) }}%>
+      <%= f.input :hours,  as: :string, :label => "Heure *" do %>
         <%= text_field_tag "hours", "#{@hour}:#{@minutes}", class: "w-100 px-3", style:"height:40px", data: {controller: "timepicker", timepicker_hour_value: @hour, timepicker_minutes_value: @minutes } %>
       <% end %>
       <div class="d-flex justify-content-center">

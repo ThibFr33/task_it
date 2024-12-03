@@ -23,9 +23,9 @@
 
 
 
-<ul><% @reminders.each do |reminder| %></ul>
+<% @reminders.each do |reminder| %>
   <div class="reminders-card-index d-flex justify-content-between">
-    <%= link_to reminder.description,reminder_path(reminder), class:"reminders-card-link" %>
+    <%= link_to reminder.description,edit_reminder_path(reminder), class:"reminders-card-link" %>
     <%= link_to reminder_path(reminder),
         data: {
           turbo_method: :delete,
