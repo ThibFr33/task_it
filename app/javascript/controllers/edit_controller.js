@@ -11,9 +11,6 @@ export default class extends Controller {
     this.listTitleTarget.classList.add("d-none")
     this.editFormTarget.classList.remove("d-none")
   }
-  removeOnClick() {
-    this.element.classList.remove("d-none")
-  }
 
 
 }
