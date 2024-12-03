@@ -1,13 +1,18 @@
 <div class="container">
   <div class="list-card-product" style="background-image: url(<%= image_path(image_category(@list.category)) %>)">
     <div class="row">
-      <div class="row " data-controller="edit">
-        <div class="d-flex justify-content-between">
-          <h2 class="text-center" data-edit-target="listTitle"> <%= @list.name %></h2>
-          <button type="button" class="fa-solid fa-pen-to-square" data-action="click->edit#addOnClick" ></button>
+      <div class="" data-controller="edit">
+        <div class="d-flex justify-content-between my-3 mx-2"data-edit-target="listTitle">
+          <h2 class="flex-grow-1 text-center" > <%= @list.name %></h2>
+          <i class="fa-solid fa-pen-to-square"  data-action="click->edit#addOnClick"></i>
         </div>
-        <%= simple_form_for @list, html: { class: "d-none"}, data: { edit_target: "editForm" } do |f| %>
-        <%= f.input :name, placeholder: (@list.name) %>
+        <div class="d-flex justify-content-between my-3 mx-2">
+          <%= simple_form_for @list, html: { class: "d-none"}, data: { edit_target: "editForm" } do |f| %>
+          <%= f.input_field :name, placeholder: (@list.name), class: "list-name-input"%>
+          <%= button_tag type: "submit", class: "button-validate" do %>
+            <i class="fa-solid fa-check"></i>
+          <% end %>
+        </div>
       </div>
         <% end %>
           <% @list.order_by_done_tasks.each do |task| %>
