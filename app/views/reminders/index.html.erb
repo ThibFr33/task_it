@@ -6,7 +6,20 @@
     <%= link_to "", new_reminder_path %>
     <i class="fa-solid fa-circle-plus color fa-2x"></i>
   </div>
-</div>
+  </div>
+  <%# input pour OCR %>
+          <%= simple_form_for :ocr, url: ocr_reminders_path(id: @reminder.id), method: :post, html: { multipart: true } do |f| %>
+            <div style="display: none;">
+              <%= f.input :temp_photo, as: :file, input_html: { id: "fileInput" } %>
+            </div>
+
+           <label for="fileInput" style="cursor: pointer;">
+             <i class="fa-solid fa-camera-retro" style="font-size 80px"></i>
+           </label>
+
+              <%= f.submit "Envoyer", class: "validate-button w-50", style: "margin-top: 10px;" %>
+          <% end %>
+
 
 </div>
     <ul><% @reminders.each do |reminder| %></ul>
