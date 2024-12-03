@@ -29,14 +29,14 @@ class ListsController < ApplicationController
   def destroy
     @list = List.find(params[:id])
     @list.destroy
-    redirect_to list_paths, status: :see_other
+    redirect_to list_path, status: :see_other
   end
 
   def ocr
     @list = List.find(params[:id])
     tasks_list = OcrList.new(params[:ocr][:temp_photo]).call
     # OcrListJob.perform_later(params[:ocr][:temp_photo],@list)
-    
+
     tasks_list["tasks"].each do |task|
       Task.create!(label: task, list: @list)
     end
