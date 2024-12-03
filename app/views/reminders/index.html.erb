@@ -18,10 +18,10 @@
               <%= f.submit "Envoyer", class: "validate-button w-50", style: "margin-top: 10px;" %>
           <% end %>
 
-
 </div>
+
     <ul><% @reminders.each do |reminder| %></ul>
   <div class="reminders-card-index">
-    <%= link_to reminder.description,reminder_path(reminder), class:"reminders-card-link"%>
+    <%= link_to reminder.description,reminder_path(reminder), class:"reminders-card-link" %>
   </div>
     <% end %>

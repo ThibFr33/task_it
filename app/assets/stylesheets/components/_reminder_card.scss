@@ -18,10 +18,19 @@
 .reminder-card-dashboard {
   margin: 5px;
   // padding: 10px;
-  h5, p {
+  h5 {
     padding-left: 90px;
+    padding-top: 4px;
+    font-weight: 600;
+    font-size: 20px;
   }
-
+  p {
+    padding-left: 90px;
+    margin-top: -7px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 18px;
+  }
   color: $white;
   font-weight: 600;
   font-size: 20px;
