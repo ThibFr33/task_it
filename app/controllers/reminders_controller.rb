@@ -1,7 +1,7 @@
 class RemindersController < ApplicationController
 
   def index
-    @reminders = current_user.reminders
+    @reminders = current_user.reminders.where("DATE(end_date) >= ?", Date.current)
   end
 
   def new
