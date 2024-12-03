@@ -6,10 +6,9 @@ import "flatpickr/dist/l10n/fr.js"
 export default class extends Controller {
   connect() {
     flatpickr(this.element, {
-    dateFormat: "Y-m-d",
+    dateFormat: "Y-d-m",
     disableMobile: true,
-    allowInput: false,
-    "locale": "fr"
+    "locale": "fr",
     })
   }
 }
