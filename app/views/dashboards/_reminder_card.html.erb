@@ -1,5 +1,19 @@
 <%=link_to edit_reminder_path(reminder), class: "col-6 p-0 text-decoration-none" do %>
   <div class= "reminder-card-dashboard">
-    <p><%= reminder.description %></p>
+    <div class="card-calendar d-flex">
+      <div class="d-flex flex-column">
+        <div class="calendar-header">
+          <span class="month"><%= Date.today.strftime("%b").upcase %></span>
+        </div>
+        <div class="calendar-body">
+          <span class="date"><%= Date.today.strftime("%d") %></span>
+        </div>
+      </div>
+      <div class="d-flex flex-column">
+        <h5><%= reminder.description %></h5>
+        <p><%= reminder.end_date.strftime("%Hh%M") %></p>
+
+      </div>
+    </div>
   </div>
 <% end %>
