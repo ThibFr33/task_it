@@ -1,7 +1,7 @@
 class RemindersController < ApplicationController
 
   def index
-    @reminders = current_user.reminders.where("DATE(end_date) >= ?", Date.current)
+    @reminders = current_user.reminders.order(:end_date).where("DATE(end_date) >= ?", Date.current)
   end
 
   def new
@@ -14,6 +14,8 @@ class RemindersController < ApplicationController
 
   def create
     @reminder = Reminder.new(reminder_params)
+    end_date = DateTime.parse("#{params[:end_date]} #{params[:hours]}")
+    @reminder.end_date = end_date
     @reminder.user = current_user
     if @reminder.save
       redirect_to reminders_path
