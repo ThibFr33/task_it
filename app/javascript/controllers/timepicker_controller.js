@@ -13,7 +13,7 @@ export default class extends Controller {
       disableMobile: true,
       defaultHour: this.hourValue,
       defaultMinute: this.minutesValue,
-
+      time_24hr: true
     })
   }
 }

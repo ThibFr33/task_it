@@ -28,11 +28,11 @@ class RemindersController < ApplicationController
 
   def update
     @reminder = Reminder.find(params[:id])
-    end_date = DateTime.parse("#{params[:end_date]} #{params[:hours]}")
+    end_date = DateTime.parse("#{params[:end_date]} #{params[:hours]} #{params[:description]}")
     @reminder.end_date = end_date
     @reminder.user = current_user
       if @reminder.save
-    redirect_to root_path
+      redirect_to root_path
       else
         render :edit, status: :unprocessable_entity
       end
