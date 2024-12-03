@@ -14,6 +14,8 @@ class RemindersController < ApplicationController
 
   def show
     @reminder = Reminder.find(params[:id])
+    @hour = @reminder.end_date.hour
+    @minutes = @reminder.end_date.min
   end
 
   def create
@@ -28,6 +30,23 @@ class RemindersController < ApplicationController
     end
   end
 
+  def edit
+    @reminder = Reminder.find(params[:id])
+    @hour = @reminder.end_date.hour
+    @minutes = @reminder.end_date.min
+  end
+
+  def update
+    @reminder = Reminder.find(params[:id])
+    end_date = DateTime.parse("#{params[:end_date]} #{params[:hours]}")
+    @reminder.end_date = end_date
+    @reminder.user = current_user
+      if @reminder.save
+    redirect_to root_path
+      else
+        render :edit, status: :unprocessable_entity
+      end
+  end
 
   def destroy
     @reminder = Reminder.find(params[:id])
