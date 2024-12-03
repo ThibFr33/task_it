@@ -2,7 +2,7 @@
   <div class="list-card-product" style="background-image: url(<%= image_path(image_category(@list.category)) %>)">
     <div class="row">
       <div class="" data-controller="edit">
-        <div class="d-flex justify-content-between my-3 mx-2"data-edit-target="listTitle">
+        <div class="d-flex justify-content-between my-3 mx-3"data-edit-target="listTitle">
           <h2 class="flex-grow-1 text-center" > <%= @list.name %></h2>
           <i class="fa-solid fa-pen-to-square"  data-action="click->edit#addOnClick"></i>
         </div>
@@ -15,11 +15,11 @@
         </div>
       </div>
         <% end %>
+        <div class="" data-controller="edit">
           <% @list.order_by_done_tasks.each do |task| %>
-            <%= simple_form_for task, data: { controller: "submit-task" } do |f| %>
-              <%= f.input :done, as: :boolean, label: task.label, input_html: {data: {action: "change->submit-task#submitOnChange"}} %>
-            <% end %>
+            <%= render 'tasks/task', task: task %>
           <% end %>
+        </div>
             <%= simple_form_for [@list, @task_new] do |f| %>
               <%= f.input_field :label, placeholder: '...'%>
             <% end %>

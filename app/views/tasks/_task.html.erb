@@ -1,0 +1,6 @@
+<%= simple_form_for task, data: { controller: "submit-task" } do |f| %>
+  <div class="d-flex justify-content-between mx-3">
+    <%= f.input :done, as: :boolean, label: task.label, input_html: {data: {action: "change->submit-task#submitOnChange"}} %>
+    <i class="fa-solid fa-pen-to-square"></i>
+  </div>
+<% end %>
