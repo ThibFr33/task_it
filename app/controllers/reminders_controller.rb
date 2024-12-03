@@ -3,8 +3,9 @@ require "open-uri"
 class RemindersController < ApplicationController
 
   def index
-    @reminders = current_user.reminders
+    @reminders = current_user.reminders.order(:end_date).where("DATE(end_date) >= ?", Date.current)
     @reminder = Reminder.new
+
   end
 
   def new
@@ -17,9 +18,11 @@ class RemindersController < ApplicationController
 
   def create
     @reminder = Reminder.new(reminder_params)
+    end_date = DateTime.parse("#{params[:end_date]} #{params[:hours]}")
+    @reminder.end_date = end_date
     @reminder.user = current_user
     if @reminder.save
-      redirect_to root_path
+      redirect_to reminders_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -29,7 +32,7 @@ class RemindersController < ApplicationController
   def destroy
     @reminder = Reminder.find(params[:id])
     @reminder.destroy
-    redirect_to reminder_paths
+    redirect_to reminders_path
   end
 
   def ocr
@@ -47,7 +50,6 @@ class RemindersController < ApplicationController
   private
 
   def reminder_params
-    params.require(:reminder).permit(:description, :end_date)
-    params.require(:reminder).permit(:description, :hours)
+    params.require(:reminder).permit(:description, :end_date, :hours)
   end
 end

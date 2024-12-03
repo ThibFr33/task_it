@@ -1,10 +1,8 @@
-<div class="d-flex align-items-baseline">
+<div class="d-flex align-items-baseline me-2">
   <div class= "col-10 text-left my-title">
     <h2>Mes rappels</h2>
   </div>
-  <div class="col-2 text-right">
-    <%= link_to "", new_reminder_path %>
-    <i class="fa-solid fa-circle-plus color fa-2x"></i>
+    <a class="btn" href="<%= new_reminder_path(@reminder) %>"><i class="fa-solid fa-circle-plus color fa-2x"></i></a>
   </div>
   </div>
   <%# input pour OCR %>
