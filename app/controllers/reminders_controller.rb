@@ -16,7 +16,7 @@ class RemindersController < ApplicationController
     @reminder = Reminder.new(reminder_params)
     @reminder.user = current_user
     if @reminder.save
-      redirect_to root_path
+      redirect_to reminders_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -25,13 +25,12 @@ class RemindersController < ApplicationController
   def destroy
     @reminder = Reminder.find(params[:id])
     @reminder.destroy
-    redirect_to reminder_paths
+    redirect_to reminders_path
   end
 
   private
 
   def reminder_params
-    params.require(:reminder).permit(:description, :end_date)
-    params.require(:reminder).permit(:description, :hours)
+    params.require(:reminder).permit(:description, :end_date, :hours)
   end
 end

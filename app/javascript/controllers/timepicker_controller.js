@@ -10,6 +10,6 @@ export default class extends Controller {
       dateFormat: "H:i",
       disableMobile: true,
     })
-
+    
   }
 }
