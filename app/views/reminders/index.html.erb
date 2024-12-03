@@ -2,26 +2,36 @@
   <div class= "col-10 text-left my-title">
     <h2>Mes rappels</h2>
   </div>
-    <a class="btn" href="<%= new_reminder_path(@reminder) %>"><i class="fa-solid fa-circle-plus color fa-2x"></i></a>
-  </div>
-  </div>
-  <%# input pour OCR %>
-          <%= simple_form_for :ocr, url: ocr_reminders_path(id: @reminder.id), method: :post, html: { multipart: true } do |f| %>
-            <div style="display: none;">
-              <%= f.input :temp_photo, as: :file, input_html: { id: "fileInput" } %>
-            </div>
-
-           <label for="fileInput" style="cursor: pointer;">
-             <i class="fa-solid fa-camera-retro" style="font-size 80px"></i>
-           </label>
-
-              <%= f.submit "Envoyer", class: "validate-button w-50", style: "margin-top: 10px;" %>
-          <% end %>
-
+    <a class="btn" href="<%= new_reminder_path(@reminder) %>"><i class="fa-solid fa-circle-plus fa-beat color fa-2x"></i></a>
 </div>
 
-    <ul><% @reminders.each do |reminder| %></ul>
-  <div class="reminders-card-index">
-    <%= link_to reminder.description,reminder_path(reminder), class:"reminders-card-link" %>
+
+
+<%# input pour OCR %>
+<%= simple_form_for :ocr, url: ocr_reminders_path(id: @reminder.id), method: :post, html: { multipart: true } do |f| %>
+
+  <div style="display: none;">
+    <%= f.input :temp_photo, as: :file, input_html: { id: "fileInput" } %>
   </div>
+
+  <label for="fileInput" style="cursor: pointer;">
+    <i class="fa-solid fa-camera-retro" style="font-size 80px"></i>
+  </label>
+
+    <%= f.submit "Envoyer", class: "validate-button w-50", style: "margin-top: 10px;" %>
+<% end %>
+
+
+
+<ul><% @reminders.each do |reminder| %></ul>
+  <div class="reminders-card-index d-flex justify-content-between">
+    <%= link_to reminder.description,reminder_path(reminder), class:"reminders-card-link" %>
+    <%= link_to reminder_path(reminder),
+        data: {
+          turbo_method: :delete,
+          turbo_confirm: "Êtes-vous sûr(e) ?"
+        } do %>
+    <i class="fa-solid fa-trash mt-1 trash-btn" style="color: #FFFFFF;"></i>
     <% end %>
+  </div>
+<% end %>
