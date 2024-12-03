@@ -1,0 +1,76 @@
+.reminders-card-index {
+  a{
+    color: $white;
+   }
+  margin: 8px;
+  padding: 20px;
+  padding-left: 30px;
+  // color: $black;
+  font-weight: 600;
+  font-size: 20px;
+  background-color: $purple;
+  border-radius: 25px;
+  height: 70px;
+  width: 380px;
+  list-style: none;
+}
+
+.reminder-card-dashboard {
+  margin: 5px;
+  // padding: 10px;
+  h5, p {
+    padding-left: 90px;
+  }
+
+  color: $white;
+  font-weight: 600;
+  font-size: 20px;
+  background-color: $purple;
+  border-radius: 25px;
+  height: 70px;
+  width: 380px;
+}
+
+.reminders-card-link {
+  text-decoration: none;
+  color: $black;
+}
+
+.calendar-header {
+  background-color: $white;
+  color: $purple;
+  width: 70px;
+  border-top-left-radius: 25px;
+  // border-top-right-radius: 12px;
+  // padding: 5px 0;
+}
+
+.month {
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-left: 15px;
+}
+
+.calendar-body {
+  flex: 1;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  color: $white;
+}
+
+.date {
+  font-size: 28px;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-bottom: 8px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Espacement entre les cartes */
+  justify-content: center;
+  padding: 10px;
+}

@@ -1,5 +1,15 @@
 <%=link_to reminder_path(reminder), class: "col-6 p-0 text-decoration-none" do %>
   <div class= "reminder-card-dashboard">
-    <p><%= reminder.description %></p>
+    <div class="card-calendar">
+      <div class="calendar-header">
+    <span class="month"><%= Date.today.strftime("%b").upcase %></span>
+  </div>
+  <div class="calendar-body">
+    <span class="date"><%= Date.today.strftime("%d") %></span>
+  </div>
+    </div>
+    <h5><%= reminder.description %></h5>
+    <p><%= Time.current.strftime("%H:%M") %></p>
+
   </div>
 <% end %>

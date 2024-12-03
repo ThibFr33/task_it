@@ -7,7 +7,7 @@
         <%= time_field_tag "hours", "", class: "w-100 px-3", style:"height:40px" %>
       <% end %>
       <div class="d-flex justify-content-center">
-        <%= f.submit "Créer", class: "btn validate-button w-50"%>
+        <%= f.submit "Créer", class: "btn validate-button"%>
         </div>
         <%# input pour OCR %>
           <%= simple_form_for :ocr, url: ocr_reminders_path(id: @reminder.id), method: :post, html: { multipart: true } do |f| %>
