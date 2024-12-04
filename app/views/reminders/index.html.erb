@@ -17,8 +17,7 @@
   <label for="fileInput" style="cursor: pointer;">
     <i class="fa-solid fa-camera-retro" style="font-size 80px"></i>
   </label>
-
-    <%= f.submit "Envoyer", class: "validate-button w-50", style: "margin-top: 10px;" %>
+    <%= f.submit "Envoyer", class: "validate-button w-50", style: "margin-bottom: 25px" %>
 <% end %>
 
 
@@ -29,7 +28,6 @@
     <%= link_to reminder_path(reminder),
         data: {
           turbo_method: :delete,
-          turbo_confirm: "Êtes-vous sûr(e) ?"
         } do %>
     <i class="fa-solid fa-trash mt-1 trash-btn" style="color: #FFFFFF;"></i>
     <% end %>
