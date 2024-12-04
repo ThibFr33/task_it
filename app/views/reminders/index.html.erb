@@ -15,9 +15,9 @@
   </div>
 
   <label for="fileInput" style="cursor: pointer;">
-    <i class="fa-solid fa-camera-retro" style="font-size 80px"></i>
+    <%=image_tag "qr-code.png", alt: "scan", width: "30" %>
   </label>
-    <%= f.submit "Envoyer", class: "validate-button w-50", style: "margin-bottom: 25px" %>
+    <%= f.submit "Ok", class: "ocr-button w50", style: "margin-bottom: 25px" %>
 <% end %>
 
 

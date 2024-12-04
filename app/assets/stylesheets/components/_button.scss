@@ -18,3 +18,27 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: translateY(-3px);
 }
+
+.ocr-button {
+  color: $black;
+  font-weight: 600;
+  background-color: $white;
+  border-radius: 25px;
+  height: 40px;
+  margin-bottom: 10px;
+  justify-content: center;
+  text-align: center;
+  border-color: $white;
+}
+
+.ocr-list-button {
+  color: $white;
+  font-weight: 600;
+  background-color: $black;
+  border-radius: 25px;
+  height: 40px;
+  margin-bottom: 10px;
+  justify-content: center;
+  text-align: center;
+  border-color: $white;
+}
