@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { sessions: 'users/sessions' }
   root to: "dashboards#index"
   resources :dashboards, only: [:index]
   resources :lists do
     resources :tasks, only: [:create, :new]
     post 'ocr', on: :member
   end
-  resources :tasks, only: [:update, :destroy]
+  resources :tasks, only: [:update, :destroy, :edit]
   resources :reminders, only: [:new, :edit, :index, :update, :destroy, :create] do
     post 'ocr', on: :collection
   end

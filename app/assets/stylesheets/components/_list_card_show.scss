@@ -48,4 +48,16 @@
 .list-name-input {
   background-color: transparent;
   border: none;
+  border-radius: 0.25rem;
+  margin-bottom: 0.7rem;
+  width: 150px;
+  font-size: calc(1.325rem + 0.9vw);
+  font-weight: bold;
+  text-align: center;
+}
+
+.add-task-input {
+  border-radius: 0.25rem;
+  border: none;
+  margin-left: 40px;
 }
