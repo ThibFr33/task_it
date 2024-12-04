@@ -98,49 +98,49 @@ user_id: morgane.id,
 )
 
 reminder = Reminder.create!(
-end_date: "03/12/2024 15:00",
+end_date: "04/12/2024 15:00",
 description: 'Acheter fleurs',
 user_id: morgane.id,
 )
 
 reminder = Reminder.create!(
-end_date: "03/12/2024 11:30",
+end_date: "04/12/2024 11:30",
 description: 'Arroser plantes',
 user_id: morgane.id,
 )
 
 reminder = Reminder.create!(
-end_date: "03/12/2024 11:30",
+end_date: "04/12/2024 11:30",
 description: 'Ranger maison',
 user_id: morgane.id,
 )
 
 reminder = Reminder.create!(
-end_date: "03/12/2024 11:30",
+end_date: "04/12/2024 11:30",
 description: 'Déposer Kevin',
 user_id: morgane.id,
 )
 
 reminder = Reminder.create!(
-  end_date: "03/12/2024 22:00",
+  end_date: "04/12/2024 22:00",
   description: 'Récupérer colis',
   user_id: jb.id,
 )
 
 reminder = Reminder.create!(
-  end_date: "03/12/2024 09:00",
+  end_date: "04/12/2024 09:00",
   description: 'Déposer colis',
   user_id: jb.id,
 )
 
 reminder = Reminder.create!(
-  end_date: "03/12/2024 17:00",
+  end_date: "04/12/2024 17:00",
   description: 'Acheter fleurs',
   user_id: jb.id,
 )
 
 reminder = Reminder.create!(
-  end_date: "03/12/2024 19:30",
+  end_date: "04/12/2024 19:30",
   description: 'Arroser plantes',
   user_id: jb.id,
 )
@@ -170,31 +170,31 @@ reminder = Reminder.create!(
 )
 
 reminder = Reminder.create!(
-  end_date: "03/12/2024 11:00",
+  end_date: "04/12/2024 11:00",
   description: 'Acheter fleurs',
   user_id: thib.id,
 )
 
 reminder = Reminder.create!(
-  end_date: "03/12/2024 09:00",
+  end_date: "04/12/2024 09:00",
   description: 'Déposer colis',
   user_id: thib.id,
 )
 
 reminder = Reminder.create!(
-  end_date: "03/12/2024 15:00",
+  end_date: "04/12/2024 15:00",
   description: 'Courses',
   user_id: thib.id,
 )
 
 reminder = Reminder.create!(
-end_date: "03/12/2024 11:30",
+end_date: "04/12/2024 11:30",
 description: 'Arroser plantes',
 user_id: thib.id,
 )
 
 reminder = Reminder.create!(
-end_date: "03/12/2024 11:30",
+end_date: "04/12/2024 11:30",
 description: 'Récupérer Kevin',
 user_id: thib.id,
 )
@@ -224,31 +224,31 @@ reminder = Reminder.create!(
 )
 
 reminder = Reminder.create!(
-end_date: "03/12/2024 09:00",
+end_date: "04/12/2024 09:00",
 description: 'Récupérer Kévin',
 user_id: dono.id,
 )
 
 reminder = Reminder.create!(
-end_date: "03/12/2024 09:00",
+end_date: "04/12/2024 09:00",
 description: 'Déposer colis',
 user_id: dono.id,
 )
 
 reminder = Reminder.create!(
-end_date: "03/12/2024 15:00",
+end_date: "04/12/2024 15:00",
 description: 'Acheter fleurs',
 user_id: dono.id,
 )
 
 reminder = Reminder.create!(
-end_date: "03/12/2024 11:30",
+end_date: "04/12/2024 11:30",
 description: 'Arroser plantes',
 user_id: dono.id,
 )
 
 reminder = Reminder.create!(
-end_date: "03/12/2024 11:30",
+end_date: "04/12/2024 11:30",
 description: 'Courses',
 user_id: dono.id,
 )
