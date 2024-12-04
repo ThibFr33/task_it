@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :tasks, only: [:create, :new]
     post 'ocr', on: :member
   end
-  resources :tasks, only: [:update, :destroy]
+  resources :tasks, only: [:update, :destroy, :edit]
   resources :reminders, only: [:new, :edit, :index, :update, :destroy, :create] do
     post 'ocr', on: :collection
   end
