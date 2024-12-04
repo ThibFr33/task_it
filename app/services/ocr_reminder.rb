@@ -24,8 +24,9 @@ Voici un model de rappel :
 
 Tu dois :
 1. Un rappel contient une datetime et une description. Extraire chaque rappel séparément, de façon claire et lisible.
-2. Identifier la date associée au rappel si elle est mentionnée (par exemple, '12 mars').
+2. Identifier la date associée au rappel si elle est mentionnée (par exemple, '12 décembre').
    - Si l'année n'est pas explicitement écrite, considère que la date appartient à l'année en cours (2024).
+   - La date est ultérieure à la date du jour
 3. Si un rappel est ambigu ou difficile à lire, utilise une approximation basée sur la correspondance française la plus proche.
 
 Ta réponse doit être :
