@@ -29,6 +29,7 @@
               <% end %>
             <% end %>
 
+        <div class="col-12 text-center">
            <%# input pour OCR %>
           <%= simple_form_for :ocr, url: ocr_list_path(id: @list.id), method: :post, html: { multipart: true } do |f| %>
             <div style="display: none;">
@@ -36,11 +37,12 @@
             </div>
 
            <label for="fileInput" style="cursor: pointer;">
-             <i class="fa-solid fa-camera-retro" style="font-size 80px"></i>
+             <%=image_tag "qr-code.png", alt: "scan", width: "30" %>
            </label>
 
-              <%= f.submit "Envoyer", class: "validate-button", style: "margin-top: 10px;" %>
+              <%= f.submit "Ok", class: "ocr-list-button", style: "margin-top: 10px;" %>
           <% end %>
+        </div>
 
 <div class="">
 <%= render 'lists/loader' %>

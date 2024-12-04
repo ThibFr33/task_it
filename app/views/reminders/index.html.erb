@@ -1,13 +1,9 @@
-<div class="d-flex align-items-baseline me-3">
-  <div class= "col-10 text-left my-title">
+<div class="d-flex align-items-baseline me-2">
+  <div class= "col-7 text-left my-title">
+
     <h2>Mes rappels</h2>
   </div>
-    <a class="btn" href="<%= new_reminder_path(@reminder) %>"><i class="fa-solid fa-circle-plus fa-beat color fa-2x"></i></a>
-</div>
-
-
-
-<%# input pour OCR %>
+  <%# input pour OCR %>
 <%= simple_form_for :ocr, url: ocr_reminders_path(id: @reminder.id), method: :post, html: { multipart: true } do |f| %>
 
   <div style="display: none;">
@@ -15,11 +11,13 @@
   </div>
 
   <label for="fileInput" style="cursor: pointer;">
-    <i class="fa-solid fa-camera-retro" style="font-size 80px"></i>
+    <%=image_tag "qr-code.png", alt: "scan", width: "30" %>
   </label>
-    <%= f.submit "Envoyer", class: "validate-button w-50", style: "margin-bottom: 25px" %>
+    <%= f.submit "Ok", class: "ocr-button w50", style: "margin-bottom: 25px" %>
 <% end %>
+    <a class="btn" href="<%= new_reminder_path(@reminder) %>"><i class="fa-solid fa-circle-plus fa-beat color fa-2x"></i></a>
 
+</div>
 
 
 <% @reminders.each do |reminder| %>
