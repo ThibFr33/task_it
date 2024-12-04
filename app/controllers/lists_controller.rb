@@ -20,6 +20,12 @@ class ListsController < ApplicationController
     @list = List.new(list_params)
     @list.user = current_user
      if @list.save
+      # respond_to do |format|
+      #   format.turbo_stream do
+      #     render turbo_stream: turbo_stream.append(:listModal, partial: 'dashboards/modal',
+      #       target: 'listModal',
+      #       locals: {})
+      #   end
        redirect_to list_path(@list)
      else
        render "dashboards/index", status: :unprocessable_entity

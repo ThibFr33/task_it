@@ -1,7 +1,9 @@
 .reminder-create {
   background-color: $purple;
-  margin-top: 15px;
+  margin-top: 30px;
+  margin-bottom: 15px;
   border-radius: 25px;
+  padding-bottom: 20px;
   .form-control {
     color: $black;
     &:focus {
@@ -9,7 +11,7 @@
     }
   }
   ::placeholder {
-    color: black;
+    color: $gray;
   }
 }
 
@@ -18,6 +20,6 @@
   font-weight: bold;
   font-size: 20px;
   text-align: left;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
