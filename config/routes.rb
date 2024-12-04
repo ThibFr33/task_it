@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { sessions: 'users/sessions' }
   root to: "dashboards#index"
   resources :dashboards, only: [:index]
   resources :lists do

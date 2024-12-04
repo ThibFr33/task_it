@@ -36,7 +36,6 @@ class ListsController < ApplicationController
     @list = List.find(params[:id])
     tasks_list = OcrList.new(params[:ocr][:temp_photo]).call
     # OcrListJob.perform_later(params[:ocr][:temp_photo],@list)
-
     tasks_list["tasks"].each do |task|
       Task.create!(label: task, list: @list)
     end
