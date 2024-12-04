@@ -21,24 +21,26 @@
 
 .ocr-button {
   color: $black;
-  font-weight: 600;
+  font-weight: 500;
   background-color: $white;
   border-radius: 25px;
-  height: 40px;
+  height: 35px;
   margin-bottom: 10px;
   justify-content: center;
   text-align: center;
   border-color: $white;
+  border-style: none;
 }
 
 .ocr-list-button {
   color: $white;
-  font-weight: 600;
+  font-weight: 500;
   background-color: $black;
-  border-radius: 25px;
-  height: 40px;
+  border-radius: 50%;
+  height: 35px;
   margin-bottom: 10px;
   justify-content: center;
   text-align: center;
   border-color: $white;
+  border-style: none;
 }
