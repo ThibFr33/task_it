@@ -10,8 +10,7 @@
           <%= f.input :name, label: 'Nom de la liste' %>
           <%= f.select :category, options_for_select(List.categories.map {|key, value| [key.capitalize, key]}), class: 'select-form' %>
          <%= f.button :submit, 'Valider', class: 'validate-button btn btn-dark mb-3 fw-bold mt-3' %>
-         <% end %>
-
+        <% end %>
       </div>
     </div>
   </div>
