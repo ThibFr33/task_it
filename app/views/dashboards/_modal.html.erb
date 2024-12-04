@@ -9,10 +9,16 @@
         <%= simple_form_for @list do |f| %>
           <%= f.input :name, label: 'Nom de la liste' %>
           <%= f.select :category, options_for_select(List.categories.map {|key, value| [key.capitalize, key]}), class: 'select-form' %>
+<<<<<<< HEAD
       </div>
       <div class="modal-footer">
         <input class="btn btn-dark mb-3 fw-bold" type="submit" value="Valider" style="border-radius:25px; width: 335px">
         <% end %>
+=======
+         <%= f.button :submit, 'Valider', class: 'validate-button btn btn-dark mb-3 fw-bold mt-3' %>
+         <% end %>
+
+>>>>>>> dce8a960c3efac49a949a663ce680ad6d5abe7f8
       </div>
     </div>
   </div>
