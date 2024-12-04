@@ -11,6 +11,10 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    @task = Task.find(params[:id])
+  end
+
   def update
     @task = Task.find(params[:id])
     @list = @task.list
@@ -20,8 +24,13 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
+    @list = @task.list
     @task.destroy
-    redirect_to tasks_path
+    respond_to do |format|
+      format.html { redirect_to list_path(@list)}
+      format.turbo_stream
+    end
+
   end
 
   private
