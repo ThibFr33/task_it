@@ -5,14 +5,14 @@
   background-color: $yellow;
   color: $black;
   display: flex;
-  margin: 10px;
+  margin-top: 20px;
   color: $black;
   font-weight: 500;
   font-size: 18px;
   padding: 10px;
   border-radius: 25px;
-  background-size: 200px;
-  background-position: 150px 90px;
+  background-size: 140px;
+  background-position: 218px 58px;
   background-repeat: no-repeat;
 }
 
@@ -33,7 +33,6 @@
 .was-validated .form-check-input:valid:checked, .form-check-input.is-valid:checked {
   background-color: $black;
 }
-
 
 .fa-pen {
   font-size: 15px;
@@ -58,5 +57,9 @@
 .add-task-input {
   border-radius: 0.25rem;
   border: none;
-  margin-left: 40px;
+  margin-left: 35px;
+  margin-top: 9px;
+}
+.cross-out input:checked + label {
+  text-decoration: line-through;
 }
