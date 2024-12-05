@@ -3,8 +3,16 @@
   </div>
     <ul><% @lists.each do |list| %></ul>
       <%= link_to list_path(list), class:"lists-card-link" do %>
-        <div class="lists-card-index">
+        <div class="lists-card-index d-flex justify-content">
           <%= list.name %>
+          <div class="trash d-flex">
+            <%= link_to list_path(list),
+                data: {
+                  turbo_method: :delete,
+                } do %>
+                <i class="fa-regular fa-trash-can mt-1 trash-btn" style="color: $black;"></i>
+            <% end %>
+          </div>
         </div>
       <% end %>
     <% end %>
