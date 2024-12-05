@@ -2,7 +2,9 @@
   <%= simple_form_for task, data: { controller: "submit-task" } do |f| %>
     <div class="d-flex mx-3">
       <div class="me-auto p-1">
-        <%= f.input :done, as: :boolean, label: task.label, input_html: {data: {action: "change->submit-task#submitOnChange"}} %>
+        <div class="cross-out">
+          <%= f.input :done, as: :boolean, label: task.label, input_html: {data: {action: "change->submit-task#submitOnChange"}} %>
+        </div>
       </div>
       <div class="p-1 me-1">
         <%= link_to edit_task_path(task) do %>
