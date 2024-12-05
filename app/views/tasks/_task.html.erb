@@ -1,22 +1,24 @@
-<%= turbo_frame_tag task do %>
-  <%= simple_form_for task, data: { controller: "submit-task" } do |f| %>
-    <div class="d-flex mx-3">
-      <div class="me-auto p-1">
-        <%= f.input :done, as: :boolean, label: task.label, input_html: {data: {action: "change->submit-task#submitOnChange"}} %>
+<div id="<%= dom_id(task) %>">
+  <%= turbo_frame_tag task do %>
+    <%= simple_form_for task, data: { controller: "submit-task" } do |f| %>
+      <div class="d-flex mx-3">
+        <div class="me-auto p-1">
+          <%= f.input :done, as: :boolean, label: task.label, input_html: {data: {action: "change->submit-task#submitOnChange"}} %>
+        </div>
+        <div class="p-1 me-1">
+          <%= link_to edit_task_path(task) do %>
+            <i class="fa-solid fa-pen"></i>
+          <% end %>
+        </div>
+        <div class="p-1">
+          <%= link_to task_path(task),
+            data: {
+              turbo_method: :delete,
+            } do %>
+            <i class="fa-regular fa-trash-can  trash-btn" style="color: $black;"></i>
+          <% end %>
+        </div>
       </div>
-      <div class="p-1 me-1">
-        <%= link_to edit_task_path(task) do %>
-          <i class="fa-solid fa-pen"></i>
-        <% end %>
-      </div>
-      <div class="p-1">
-        <%= link_to task_path(task),
-          data: {
-            turbo_method: :delete,
-          } do %>
-          <i class="fa-regular fa-trash-can  trash-btn" style="color: $black;"></i>
-        <% end %>
-      </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
