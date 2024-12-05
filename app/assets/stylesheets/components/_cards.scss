@@ -15,19 +15,6 @@
   display: flex;
 }
 
-// .reminder-card-dashboard {
-//   margin: 5px;
-//   // padding: 10px;
-//   padding-left: 80px;
-//   color: $white;
-//   font-weight: 550;
-//   font-size: 20px;
-//   background-color: $purple;
-//   border-radius: 25px;
-//   height: 70px;
-//   width: 380px;
-// }
-
 .voir-plus-lists {
     a{
    color: $white;
@@ -38,10 +25,8 @@
   margin-bottom: 15px;
   padding: 5px;
   padding-left: 80px;
-  // color: $white;
   font-weight: 600;
   font-size: 14px;
-  // background-color: $yellow;
   border-radius: 25px;
   width: 185px;
 }
@@ -56,10 +41,8 @@
   margin-bottom: 15px;
   padding: 5px;
   padding-left: 48px;
-  // color: $white;
   font-weight: 600;
   font-size: 14px;
-  // background-color: $purple;
   border-radius: 25px;
   width: 155px;
 }
@@ -82,25 +65,3 @@
   text-decoration: none;
   color: $black;
 }
-
-// .reminders-card-index {
-//   a{
-//     color: $white;
-//    }
-//   margin: 5px;
-//   padding: 20px;
-//   padding-left: 30px;
-//   // color: $black;
-//   font-weight: 600;
-//   font-size: 20px;
-//   background-color: $purple;
-//   border-radius: 25px;
-//   height: 70px;
-//   width: 380px;
-//   list-style: none;
-// }
-
-// .reminders-card-link {
-//   text-decoration: none;
-//   color: $black;
-// }
