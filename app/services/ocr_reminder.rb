@@ -3,7 +3,7 @@ require "json"
 
 class OcrReminder
   def initialize(photo)
-    @encoded_photo = encode_image(photo)
+    @encoded_photo = photo
     @client = OpenAI::Client.new
   end
 
@@ -58,10 +58,5 @@ Ta réponse doit être :
   )
 
     return JSON.parse(response["choices"][0]["message"]["content"])
-  end
-
-  def encode_image(photo)
-    file_content = File.read(photo.tempfile)
-    Base64.strict_encode64(file_content)
   end
 end
