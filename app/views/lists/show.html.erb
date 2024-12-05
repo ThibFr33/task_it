@@ -6,7 +6,7 @@
       <div class="" data-controller="edit">
         <div class="d-flex justify-content-between my-3"data-edit-target="listTitle">
           <h2 class="flex-grow-1 text-center" > <%= @list.name %></h2>
-          <i class="fa-solid fa-pen my-2" data-action="click->edit#addOnClick"></i>
+          <i class="fa-solid fa-pen my-2 me-3" data-action="click->edit#addOnClick"></i>
         </div>
           <%= simple_form_for @list, html: { class: "d-none"}, data: { edit_target: "editForm" } do |f| %>
         <div class="d-flex justify-content-between mx-2">
