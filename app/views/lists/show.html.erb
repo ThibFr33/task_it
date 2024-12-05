@@ -33,7 +33,7 @@
            <%# input pour OCR %>
           <%= simple_form_for :ocr, url: ocr_list_path(id: @list.id), method: :post, html: { multipart: true, data: { controller: "submit-photo"} } do |f| %>
 
-              <%= f.input :temp_photo, as: :file, input_html: { id: "fileInput", capture: "environment", data: {action:"change->submit-photo#submitFormPhoto"}}, wrapper_html: { class: "d-none" } %>
+              <%= f.input :temp_photo, as: :file, input_html: { id: "fileInput", data: {action:"change->submit-photo#submitFormPhoto"}}, wrapper_html: { class: "d-none" } %>
 
            <label for="fileInput" style="cursor: pointer;">
              <%=image_tag "scan-black.png", class:"mb-3", alt: "scan", width: "30" %>
