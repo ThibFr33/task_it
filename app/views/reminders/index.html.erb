@@ -4,19 +4,16 @@
   </div>
 
   <%# input pour OCR %>
-<%= simple_form_for :ocr, url: ocr_reminders_path(id: @reminder.id), method: :post, html: { multipart: true } do |f| %>
-  <div style="display: none;">
-    <%= f.input :temp_photo, as: :file, input_html: { id: "fileInput" } %>
-  </div>
-  <label for="fileInput" style="cursor: pointer;">
-    <%=image_tag "qr-code.png", alt: "scan", width: "30" %>
-  </label>
-    <%= f.submit "Ok", class: "ocr-button w50", style: "margin-bottom: 25px" %>
-<% end %>
+<%= simple_form_for :ocr, url: ocr_reminders_path(id: @reminder.id), method: :post, html: { multipart: true, data: { controller: "submit-photo"} } do |f| %>
+              <%= f.input :temp_photo, as: :file, input_html: { id: "fileInput", capture: "environment", data: {action:"change->submit-photo#submitFormPhoto"}}, wrapper_html: { class: "d-none" } %>
+           <label for="fileInput" style="cursor: pointer;">
+             <%=image_tag "qr-code.png", alt: "scan", width: "30" %>
+           </label>
+          <% end %>
     <a class="btn" href="<%= new_reminder_path(@reminder) %>"><i class="fa-solid fa-circle-plus fa-2x"></i></a>
 </div>
 
-</div>
+
 
 
 <% @reminders.each do |reminder| %>

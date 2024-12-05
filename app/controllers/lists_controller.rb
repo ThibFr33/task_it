@@ -34,12 +34,13 @@ class ListsController < ApplicationController
 
   def ocr
     @list = List.find(params[:id])
-    tasks_list = OcrList.new(params[:ocr][:temp_photo]).call
-    # OcrListJob.perform_later(params[:ocr][:temp_photo],@list)
-    tasks_list["tasks"].each do |task|
-      Task.create!(label: task, list: @list)
-    end
-    redirect_to list_path(@list)
+    Turbo::StreamsChannel.broadcast_update_to(
+      "list_#{@list.id}",
+      target: "loader",
+      partial: "shared/loader")
+
+    photo = encode_image(params[:ocr][:temp_photo])
+    OcrListJob.perform_later(photo, @list)
   end
 
   def edit
@@ -53,6 +54,11 @@ class ListsController < ApplicationController
   end
 
   private
+
+  def encode_image(photo)
+    file_content = File.read(photo.tempfile)
+    Base64.strict_encode64(file_content)
+  end
 
   def list_params
     params.require(:list).permit(:name, :category)
