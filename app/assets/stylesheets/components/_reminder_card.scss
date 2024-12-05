@@ -2,11 +2,19 @@
   a{
     color: $white;
    }
+   h5 {
+    padding-left: 10px;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  p {
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 18px;
+  }
+  flex: 3;
   margin: 5px;
   margin-bottom: 10px;
-  padding: 20px;
-  padding-left: 30px;
-  // color: $black;
   font-weight: 600;
   font-size: 20px;
   background-color: $purple;
@@ -21,14 +29,12 @@
   // padding: 10px;
   h5 {
     padding-left: 10px;
-    padding-top: 10px;
     font-weight: 600;
     font-size: 20px;
   }
   p {
     padding-left: 10px;
     font-weight: 500;
-    margin-top: -4px;
     font-size: 18px;
   }
   color: $white;
@@ -90,6 +96,10 @@
   line-height: 1em;
   padding: 1em 1em;
   padding-left: 5em;
+}
+
+.trash {
+  margin-left: auto;
 }
 
 .trash-btn:hover {

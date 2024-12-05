@@ -6,7 +6,7 @@
       </div>
       <div class="p-1 me-1">
         <%= link_to edit_task_path(task) do %>
-          <i class="fa-solid fa-pen-to-square"></i>
+          <i class="fa-solid fa-pen"></i>
         <% end %>
       </div>
       <div class="p-1">
@@ -14,7 +14,7 @@
           data: {
             turbo_method: :delete,
           } do %>
-          <i class="fa-solid fa-trash  trash-btn" style="color: $black;"></i>
+          <i class="fa-regular fa-trash-can  trash-btn" style="color: $black;"></i>
         <% end %>
       </div>
     </div>
