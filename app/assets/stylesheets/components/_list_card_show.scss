@@ -60,3 +60,6 @@
   border: none;
   margin-left: 40px;
 }
+.cross-out input:checked + label {
+  text-decoration: line-through;
+}
