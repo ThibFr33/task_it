@@ -1,22 +1,23 @@
- <div class="reminders-card-index d-flex">
-   <div class="d-flex flex-column my-2 ms-2">
+<div class="reminders-card-index d-flex">
+
+  <div class="d-flex flex-column">
     <div class="calendar-header">
       <span class="month"><%= reminder.end_date.strftime("%b").upcase %></span>
     </div>
     <div class="calendar-body">
-      <span class="date"><%= reminder.end_date.strftime("%d") %></span>
+        <span class="date"><%= reminder.end_date.strftime("%d") %></span>
     </div>
   </div>
-    <div class="d-flex flex-column">
-      <h5><%= link_to reminder.description,edit_reminder_path(reminder), class:"reminders-card-link" %></h5>
-      <p><%= link_to reminder.end_date.strftime("%Hh%M"),edit_reminder_path(reminder) %></p>
-    </div>
-    <div class="trash d-flex flex-column justify-content-center">
-      <%= link_to reminder_path(reminder),
-            data: {
-            turbo_method: :delete,
-            } do %>
-            <i class="fa-regular fa-trash-can mt-1 trash-btn" style="color: #FFFFFF;"></i>
-      <% end %>
-    </div>
- </div>
+
+  <div class="d-flex flex-column my-2 ms-2">
+    <h5><%= link_to reminder.description,edit_reminder_path(reminder), class:"reminders-card-link" %></h5>
+    <p><%= link_to reminder.end_date.strftime("%Hh%M"),edit_reminder_path(reminder) %></p>
+  </div>
+
+  <div class="trash-2 d-flex flex-column justify-content-center">
+    <%= link_to reminder_path(reminder), data: { turbo_method: :delete } do %>
+    <i class="fa-regular fa-trash-can trash-btn me-2" style="color: #FFFFFF;"></i>
+    <% end %>
+  </div>
+
+</div>
