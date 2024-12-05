@@ -1,10 +1,14 @@
+
+<%= turbo_stream_from "reminder-index" %>
+<div id="loader"></div>
+
 <div class="d-flex align-items-baseline me-2">
   <div class="col-7 text-left my-title">
     <h2>Mes rappels</h2>
   </div>
 
   <%# input pour OCR %>
-<%= simple_form_for :ocr, url: ocr_reminders_path(id: @reminder.id), method: :post, html: { multipart: true, data: { controller: "submit-photo"} } do |f| %>
+<%= simple_form_for :ocr, url: ocr_reminders_path, method: :post, html: { multipart: true, data: { controller: "submit-photo"} } do |f| %>
               <%= f.input :temp_photo, as: :file, input_html: { id: "fileInput", capture: "environment", data: {action:"change->submit-photo#submitFormPhoto"}}, wrapper_html: { class: "d-none" } %>
            <label for="fileInput" style="cursor: pointer;">
              <%=image_tag "qr-code.png", alt: "scan", width: "30" %>
@@ -15,34 +19,6 @@
 
 
 
-
-<% @reminders.each do |reminder| %>
-  <div class="reminders-card-index d-flex justify-content">
-
-
-      <div class="d-flex flex-column">
-        <div class="calendar-header">
-          <span class="month"><%= reminder.end_date.strftime("%b").upcase %></span>
-        </div>
-        <div class="calendar-body">
-          <span class="date"><%= reminder.end_date.strftime("%d") %></span>
-        </div>
-      </div>
-      <div class="d-flex flex-column">
-        <h5><%= link_to reminder.description,edit_reminder_path(reminder), class:"reminders-card-link" %></h5>
-        <p><%= link_to reminder.end_date.strftime("%Hh%M"),edit_reminder_path(reminder) %></p>
-      </div>
-
-
-
-
-<div class="trash d-flex">
-    <%= link_to reminder_path(reminder),
-        data: {
-          turbo_method: :delete,
-        } do %>
-    <i class="fa-regular fa-trash-can mt-1 trash-btn" style="color: #FFFFFF;"></i>
-    <% end %>
-  </div>
- </div>
-<% end %>
+<div id="reminder-list">
+  <%= render "reminders", reminders: @reminders %>
+</div>

@@ -3,9 +3,8 @@ require "open-uri"
 class RemindersController < ApplicationController
 
   def index
-    @reminders = current_user.reminders.order(:end_date).where("DATE(end_date) >= ?", Date.current)
+    @reminders = current_user.reminders.order_by_date
     @reminder = Reminder.new
-
   end
 
   def new
@@ -54,46 +53,23 @@ class RemindersController < ApplicationController
   end
 
   def ocr
-    ocr_result = OcrReminder.new(params[:ocr][:temp_photo]).call
-    # OcrListJob.perform_later(params[:ocr][:temp_photo],@reminder)
-    end_date = correct_and_convert_date(ocr_result.first["end_date"])
-    @reminder = Reminder.new(description: ocr_result.first["description"], end_date: end_date)
-    @reminder.user = current_user
-    if @reminder.save
-      redirect_to reminders_path
-    else
-      flash.alert = "Une erreur est survenue"
-    end
-  end
+    @reminder = Reminder.create!(user: current_user)
+    Turbo::StreamsChannel.broadcast_append_to(
+      "reminder-index",
+      target: "loader",
+      partial: "shared/loader")
 
+    OcrReminderJob.perform_now(@reminder, encode_image(params[:ocr][:temp_photo]), current_user)
+  end
   private
 
   def reminder_params
     params.require(:reminder).permit(:description, :end_date, :hours)
   end
 
-  def correct_and_convert_date(input_date)
-    return nil if input_date.blank?
-    begin # Parse the string manually
-      date_parts = input_date.split("T").first.split("-").map(&:to_i)
-      time_parts = input_date.split("T").last.split(":").map(&:to_i)
-
-      # Extract and normalize date components
-      year, month, day = date_parts
-      hour, minute = time_parts
-
-      # Handle invalid months and days
-      if month > 12
-        month = 12
-        day = [day, 31].min
-      end
-
-      # Create a valid DateTime object
-      DateTime.new(year, month, day, hour, minute)
-    rescue ArgumentError => e
-      nil
-      # Return nil if the conversion fails
-    end
+  def encode_image(photo)
+    file_content = File.read(photo.tempfile)
+    Base64.strict_encode64(file_content)
   end
 
 end
