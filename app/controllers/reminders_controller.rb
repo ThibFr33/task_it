@@ -40,7 +40,7 @@ class RemindersController < ApplicationController
   def update
     @reminder = Reminder.find(params[:id])
     if @reminder.update(description: params[:reminder][:description], end_date: DateTime.parse("#{params[:reminder][:end_date]} #{params[:hours]}"))
-      redirect_to root_path
+      redirect_to reminders_path
     else
       render :edit, status: :unprocessable_entity
     end
