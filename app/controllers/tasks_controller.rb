@@ -1,5 +1,7 @@
 class TasksController < ApplicationController
 
+  skip_before_action :verify_authenticity_token, only: [:update]
+
   def create
     @list = List.find(params[:list_id])
     @task = Task.new(task_params)
