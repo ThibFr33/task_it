@@ -170,32 +170,32 @@ reminder = Reminder.create!(
 )
 
 reminder = Reminder.create!(
-  end_date: "05/12/2024 11:00",
-  description: 'Acheter fleurs',
+  end_date: "24/04/2025 18:00",
+  description: 'Acheter fleurs maman',
   user_id: thib.id,
 )
 
 reminder = Reminder.create!(
-  end_date: "05/12/2024 09:00",
-  description: 'Déposer colis',
+  end_date: "24/04/2025 09:00",
+  description: 'Déposer colis vinted',
   user_id: thib.id,
 )
 
 reminder = Reminder.create!(
-  end_date: "05/12/2024 15:00",
+  end_date: "25/04/2025 15:00",
   description: 'Courses',
   user_id: thib.id,
 )
 
 reminder = Reminder.create!(
-  end_date: "05/12/2024 11:30",
+  end_date: "26/04/2025 11:30",
   description: 'Arroser plantes',
   user_id: thib.id,
 )
 
 reminder = Reminder.create!(
-  end_date: "05/12/2024 11:30",
-  description: 'Récupérer Kevin',
+  end_date: "05/05/2025 11:30",
+  description: 'Récupérer Kevin à la gare',
   user_id: thib.id,
 )
 
